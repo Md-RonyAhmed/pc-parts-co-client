@@ -55,12 +55,24 @@ const Navbar = () => {
        </div>
        <div class="drawer-side">
          <label for="sidebar" class="drawer-overlay"></label>
-         <ul class="menu p-4 overflow-y-auto w-72 bg-base-100">
+         <ul class="menu p-4 overflow-y-auto w-72 bg-base-300">
            <li>
-             <a>Sidebar Item 1</a>
+             <NavLink to="/">Home</NavLink>
            </li>
            <li>
-             <a>Sidebar Item 2</a>
+             <a href="/#parts">PC Parts</a>
+           </li>
+           <li>
+             <a href="/#reviews">Reviews</a>
+           </li>
+           <li>
+             <NavLink to="/blogs">Blogs</NavLink>
+           </li>
+           <li>
+             <NavLink to="/portfolio">My Portfolio</NavLink>
+           </li>
+           <li>
+             <NavLink to="/login">Log In</NavLink>
            </li>
          </ul>
        </div>
