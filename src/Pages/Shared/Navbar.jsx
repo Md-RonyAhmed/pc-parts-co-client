@@ -2,14 +2,41 @@ import React from 'react';
 import logo from "../../Assets/Logo/logo.png";
 import { NavLink } from "react-router-dom";
 const Navbar = () => {
+  const navbar = (
+    <>
+      <li>
+        <NavLink to="/">Home</NavLink>
+      </li>
+      <li>
+        <a href="/#parts">PC Parts</a>
+      </li>
+      <li>
+        <a href="/#reviews">Reviews</a>
+      </li>
+      <li>
+        <a href="/#reviews">Contact</a>
+      </li>
+      <li>
+        <NavLink to="/blogs">Blogs</NavLink>
+      </li>
+      <li>
+        <NavLink to="/portfolio">My Portfolio</NavLink>
+      </li>
+      <li>
+        <NavLink to="/login">Log In</NavLink>
+      </li>
+    </>
+  );
    return (
      <div class="drawer drawer-end fixed top-0">
        <input id="sidebar" type="checkbox" class="drawer-toggle" />
        <div class="drawer-content flex flex-col">
-         <div class="w-full flex navbar bg-warning justify-between">
+         <div class="w-full flex navbar bg-slate-200 justify-between shadow-md">
            <div>
              <img width="70" src={logo} alt="" />
-             <div class="flex mr-8 text-2xl">PC parts Co.</div>
+             <div class="flex mr-8 text-2xl text-primary font-bold">
+               PC parts Co.
+             </div>
            </div>
            <div class="lg:hidden flex-1 justify-end">
              <label for="sidebar" class="btn btn-square btn-ghost">
@@ -30,51 +57,13 @@ const Navbar = () => {
            </div>
 
            <div class="flex-none hidden lg:block">
-             <ul class="menu menu-horizontal p-0">
-               <li>
-                 <NavLink to="/">Home</NavLink>
-               </li>
-               <li>
-                 <a href="/#parts">PC Parts</a>
-               </li>
-               <li>
-                 <a href="/#reviews">Reviews</a>
-               </li>
-               <li>
-                 <NavLink to="/blogs">Blogs</NavLink>
-               </li>
-               <li>
-                 <NavLink to="/portfolio">My Portfolio</NavLink>
-               </li>
-               <li>
-                 <NavLink to="/login">Log In</NavLink>
-               </li>
-             </ul>
+             <ul class="menu menu-horizontal p-0">{navbar}</ul>
            </div>
          </div>
        </div>
        <div class="drawer-side">
          <label for="sidebar" class="drawer-overlay"></label>
-         <ul class="menu p-4 overflow-y-auto w-72 bg-base-300">
-           <li>
-             <NavLink to="/">Home</NavLink>
-           </li>
-           <li>
-             <a href="/#parts">PC Parts</a>
-           </li>
-           <li>
-             <a href="/#reviews">Reviews</a>
-           </li>
-           <li>
-             <NavLink to="/blogs">Blogs</NavLink>
-           </li>
-           <li>
-             <NavLink to="/portfolio">My Portfolio</NavLink>
-           </li>
-           <li>
-             <NavLink to="/login">Log In</NavLink>
-           </li>
-         </ul>
+         <ul class="menu p-4 overflow-y-auto w-72 bg-base-300">{navbar}</ul>
        </div>
      </div>
    );

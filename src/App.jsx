@@ -6,11 +6,12 @@ import Home from "./Pages/Home/Home";
 import HomeParts from "./Pages/Home/HomeParts";
 import MyPortfolio from "./Pages/MyPortfolio/MyPortfolio";
 import Reviews from "./Pages/Reviews/Reviews";
+import Footer from "./Pages/Shared/Footer";
 import Navbar from "./Pages/Shared/Navbar";
 function App() {
   return (
     <div className="mt-20 pt-4">
-      <Navbar></Navbar>
+      <Navbar/>
       <div>
         <Routes>
           <Route path="/" element={<Home></Home>}></Route>
@@ -24,6 +25,7 @@ function App() {
           <Route path="/reviews" element={<Reviews></Reviews>}></Route>
         </Routes>
       </div>
+      <Footer/>
     </div>
   );
 }
