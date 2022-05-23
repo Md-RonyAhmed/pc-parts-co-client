@@ -1,7 +1,7 @@
 import React from 'react';
 import logo from "../../Assets/Logo/logo.png";
 import { NavLink } from "react-router-dom";
-const Navbar = () => {
+const Navbar = ({children}) => {
   const navbar = (
     <>
       <li>
@@ -31,16 +31,17 @@ const Navbar = () => {
     </>
   );
    return (
-     <div class="drawer drawer-end fixed top-0 md:h-24 md:z-10 z-auto">
+     <div class="drawer drawer-end">
        <input id="sidebar" type="checkbox" class="drawer-toggle" />
        <div class="drawer-content flex flex-col">
-         <div class="w-full flex navbar bg-slate-200 justify-between shadow-md">
+         <div class="w-full flex navbar bg-slate-200 justify-between shadow-md fixed top-0 z-50">
            <div>
              <img width="70" src={logo} alt="" />
              <div class="flex mr-8 text-2xl text-primary font-bold">
                PC parts Co.
              </div>
            </div>
+
            <div class="lg:hidden flex-1 justify-end">
              <label for="sidebar" class="btn btn-square btn-ghost">
                <svg
@@ -63,7 +64,9 @@ const Navbar = () => {
              <ul class="menu menu-horizontal p-0 m-0">{navbar}</ul>
            </div>
          </div>
+         {children}
        </div>
+
        <div class="drawer-side">
          <label for="sidebar" class="drawer-overlay"></label>
          <ul class="menu p-4 overflow-y-auto w-72 bg-base-300">{navbar}</ul>
