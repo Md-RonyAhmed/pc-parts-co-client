@@ -2,6 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import LogIn from "./Pages/Authentication/LogIn";
 import Blogs from "./Pages/Blogs/Blogs";
+import Contact from "./Pages/Home/Contact";
 import Home from "./Pages/Home/Home";
 import HomeParts from "./Pages/Home/HomeParts";
 import MyPortfolio from "./Pages/MyPortfolio/MyPortfolio";
@@ -11,7 +12,7 @@ import Navbar from "./Pages/Shared/Navbar";
 function App() {
   return (
     <div className="mt-20 pt-4">
-      <Navbar/>
+      <Navbar></Navbar>
       <div>
         <Routes>
           <Route path="/" element={<Home></Home>}></Route>
@@ -23,10 +24,12 @@ function App() {
           ></Route>
           <Route path="/login" element={<LogIn></LogIn>}></Route>
           <Route path="/reviews" element={<Reviews></Reviews>}></Route>
+          <Route path="/contact" element={<Contact></Contact>}></Route>
+          <Route path="/contact" element={<Contact></Contact>}></Route>
         </Routes>
       </div>
-      <Footer/>
-    </div>
+        <Footer />
+      </div>
   );
 }
 

@@ -14,7 +14,7 @@ const Navbar = () => {
         <a href="/#reviews">Reviews</a>
       </li>
       <li>
-        <a href="/#reviews">Contact</a>
+        <a href="/#contact">Contact</a>
       </li>
       <li>
         <NavLink to="/blogs">Blogs</NavLink>
@@ -23,12 +23,15 @@ const Navbar = () => {
         <NavLink to="/portfolio">My Portfolio</NavLink>
       </li>
       <li>
+        <NavLink to="/dashboard">Dashboard</NavLink>
+      </li>
+      <li>
         <NavLink to="/login">Log In</NavLink>
       </li>
     </>
   );
    return (
-     <div class="drawer drawer-end fixed top-0">
+     <div class="drawer drawer-end fixed top-0 md:h-24 z-10">
        <input id="sidebar" type="checkbox" class="drawer-toggle" />
        <div class="drawer-content flex flex-col">
          <div class="w-full flex navbar bg-slate-200 justify-between shadow-md">
