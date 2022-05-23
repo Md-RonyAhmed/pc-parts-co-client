@@ -60,7 +60,7 @@ const Navbar = () => {
            </div>
 
            <div class="flex-none hidden lg:block">
-             <ul class="menu menu-horizontal p-0">{navbar}</ul>
+             <ul class="menu menu-horizontal p-0 m-0">{navbar}</ul>
            </div>
          </div>
        </div>
