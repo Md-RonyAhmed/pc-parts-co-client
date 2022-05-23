@@ -31,7 +31,7 @@ const Navbar = () => {
     </>
   );
    return (
-     <div class="drawer drawer-end fixed top-0 md:h-24 z-10">
+     <div class="drawer drawer-end fixed top-0 md:h-24 md:z-10 z-auto">
        <input id="sidebar" type="checkbox" class="drawer-toggle" />
        <div class="drawer-content flex flex-col">
          <div class="w-full flex navbar bg-slate-200 justify-between shadow-md">

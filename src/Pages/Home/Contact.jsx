@@ -10,7 +10,7 @@ const Contact = () => {
        </div>
        <section className="mb-0 text-gray-800 shadow-xl rounded-md border-t-2 p-6">
          <div
-           className="relative overflow-hidden bg-no-repeat bg-cover -z-10"
+           className="overflow-auto bg-no-repeat bg-cover"
            style={{
              backgroundPosition: `${50}%`,
              backgroundImage: `url(${img})`,
