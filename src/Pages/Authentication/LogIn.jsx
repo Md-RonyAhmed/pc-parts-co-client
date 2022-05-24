@@ -4,7 +4,7 @@ import {
   useSignInWithEmailAndPassword,
 } from "react-firebase-hooks/auth";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
+import { toast} from "react-toastify";
 import img from "../../Assets/Logo/logo.png";
 import auth from "../../firebase.init";
 import Loading from "../Shared/Loading";
@@ -57,7 +57,7 @@ const LogIn = () => {
 
   return (
     <div>
-      <div className="h-full bg-gradient-to-tl from-green-400 to-indigo-900 w-full py-16 px-4">
+      <div className="h-full bg-slate-50 w-full py-16 px-4">
         <div className="flex flex-col items-center justify-center w-full">
           <form
             onSubmit={handleSubmit}
@@ -66,8 +66,8 @@ const LogIn = () => {
             <div className="flex items-center justify-center">
               <img
                 className="mr-0"
-                height="65px"
-                width="65px"
+                height="70px"
+                width="70px"
                 src={img}
                 alt=""
               />
@@ -91,14 +91,6 @@ const LogIn = () => {
                 Sign up here
               </Link>
             </p>
-            <SocialLogin></SocialLogin>
-            <div className="w-full flex items-center justify-between py-5">
-              <hr className="w-full bg-gray-400" />
-              <p className="text-base font-medium leading-4 px-2.5 text-gray-400">
-                OR
-              </p>
-              <hr className="w-full bg-gray-400" />
-            </div>
             <div>
               <label
                 id="email"
@@ -174,7 +166,9 @@ const LogIn = () => {
                 LOGIN
               </button>
             </div>
-          </form>
+            <div class="divider">OR</div>
+            <SocialLogin></SocialLogin>
+              </form>
         </div>
       </div>
     </div>
