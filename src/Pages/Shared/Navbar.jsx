@@ -5,6 +5,7 @@ import auth from '../../firebase.init';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { signOut } from 'firebase/auth';
 import { toast } from 'react-toastify';
+import img from '../../Assets/Images/images.png'
 const Navbar = ({ children }) => {
   
   const [user] = useAuthState(auth);
@@ -38,12 +39,29 @@ const Navbar = ({ children }) => {
         <NavLink to="/dashboard">Dashboard</NavLink>
       </li>
       {user ? (
-        <button
-          className="btn btn-ghost btn-outline"
-          onClick={handleSignOut}
-        >
-          LogOut
-        </button>
+        <>
+          <button
+            className="btn btn-ghost btn-outline ml-1"
+            onClick={handleSignOut}
+          >
+            LogOut
+          </button>
+          {user.photoURL ? (
+            <img
+              width="30px"
+              alt=""
+              className="w-12 ml-1 hidden md:block rounded-full cursor-pointer"
+              src={user?.photoURL}
+            />
+          ) : (
+            <img
+              width="30px"
+              alt=""
+              className="w-12 ml-1 hidden md:block rounded-full cursor-pointer"
+              src={img}
+            />
+          )}
+        </>
       ) : (
         <li>
           <NavLink to="/login">Log In</NavLink>

@@ -1,6 +1,6 @@
 import React from 'react';
 
-const HomeParts = () => {
+const PcParts = () => {
    return (
       <div>
          <h1>Parts</h1>
@@ -8,4 +8,4 @@ const HomeParts = () => {
    );
 };
 
-export default HomeParts;
+export default PcParts;

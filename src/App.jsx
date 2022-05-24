@@ -5,7 +5,7 @@ import LogIn from "./Pages/Authentication/LogIn";
 import Blogs from "./Pages/Blogs/Blogs";
 import Contact from "./Pages/Home/Contact";
 import Home from "./Pages/Home/Home";
-import HomeParts from "./Pages/Home/HomeParts";
+import HomeParts from "./Pages/Home/PcParts";
 import MyPortfolio from "./Pages/MyPortfolio/MyPortfolio";
 import Reviews from "./Pages/Reviews/Reviews";
 import Footer from "./Pages/Shared/Footer";
