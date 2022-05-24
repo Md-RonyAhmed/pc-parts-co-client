@@ -1,5 +1,5 @@
 import React from 'react';
-import img from "../../Assets/Images/pc.jpg"
+import img from "../../Assets/Images/approved-quality-designify.png"
 const Banner = () => {
    return (
      <section class="md:mb-32 mb-60 bg-slate-300 mt-20 h-screen pt-3">
