@@ -9,6 +9,7 @@ import MyPortfolio from "./Pages/MyPortfolio/MyPortfolio";
 import Reviews from "./Pages/Reviews/Reviews";
 import Footer from "./Pages/Shared/Footer";
 import Navbar from "./Pages/Shared/Navbar";
+import NotFound from "./Pages/Shared/NotFound";
 function App() {
   return (
     <Navbar>
@@ -20,7 +21,7 @@ function App() {
         <Route path="/login" element={<LogIn></LogIn>}></Route>
         <Route path="/reviews" element={<Reviews></Reviews>}></Route>
         <Route path="/contact" element={<Contact></Contact>}></Route>
-        <Route path="/contact" element={<Contact></Contact>}></Route>
+        <Route path="*" element={<NotFound/>}></Route>
       </Routes>
 
       <Footer />
