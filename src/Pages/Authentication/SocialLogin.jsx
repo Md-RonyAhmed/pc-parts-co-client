@@ -6,8 +6,8 @@ import {
 } from "react-firebase-hooks/auth";
 import { useLocation, useNavigate } from "react-router-dom";
 import auth from "../../../firebase.init";
-import Loading from "../../Shared/Loading/Loading";
 import { toast } from "react-toastify";
+import Loading from "../Shared/Loading";
 
 const SocialLogin = () => {
   const [signInWithGoogle, googleUser, googleLoading, googleError] =
