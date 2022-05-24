@@ -171,12 +171,12 @@ const Footer = () => {
                </p>
                <p className="mb-4">
                  <a href="#!" className="text-black">
-                   Products
+                   PC Parts
                  </a>
                </p>
                <p className="mb-4">
                  <a href="#!" className="text-black">
-                   Dealers
+                   Contact
                  </a>
                </p>
                <p className="mb-4">
