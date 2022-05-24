@@ -1,6 +1,5 @@
-import React, { useRef } from "react";
+import React from "react";
 import {
-  useSendPasswordResetEmail,
   useSignInWithEmailAndPassword,
 } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
@@ -15,21 +14,20 @@ import SocialLogin from "./SocialLogin";
 const LogIn = () => {
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
-   const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
+  
      const {
        register,
        formState: { errors },
        handleSubmit,
      } = useForm();
-  const emailRef = useRef("");
-  const passwordRef = useRef("");
+  
   const navigate = useNavigate();
   const location = useLocation();
 
   let from = location.state?.from?.pathname || "/";
   let errorElement;
 
-  if (loading || sending) {
+  if (loading) {
     return <Loading></Loading>;
   }
 
@@ -48,15 +46,7 @@ const LogIn = () => {
      signInWithEmailAndPassword(data.email, data.password);
    };
 
-  const resetPassword = async () => {
-    const email = emailRef.current.value;
-    if (email) {
-      await sendPasswordResetEmail(email);
-      toast.success("Verification email sent!");
-    } else {
-      toast.warn("Please enter your email address");
-    }
-  };
+  
 
   return (
     <div>
@@ -144,10 +134,10 @@ const LogIn = () => {
                   })}
                   type="password"
                   className="bg-gray-100 border rounded text-xs
-                font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2"
+                font-medium leading-none text-gray-800 py-3 w-full pl-3"
                   placeholder="Enter your password"
                 />
-                <div className="absolute right-0 mt-2 mr-3 cursor-pointer">
+                <div className="absolute right-0 mr-3 cursor-pointer">
                   <svg
                     width="16"
                     height="16"
@@ -185,12 +175,12 @@ const LogIn = () => {
                 />
                 Remember me
               </div>
-              <button
-                onClick={resetPassword}
+              <Link to='/forget'
+             
                 className="text-blue-600 hover:underline hover:text-blue-700 focus:text-blue-700 transition duration-200 ease-in-out"
               >
                 Forget password?
-              </button>
+              </Link>
             </div>
             <div className="mt-5">
               {errorElement}

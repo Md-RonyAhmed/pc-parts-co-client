@@ -3,7 +3,7 @@ import loader from "../../Assets/Images/spinner.gif";
 const Loading = () => {
   return (
     <>
-      <div className=" w-60 h-full mx-auto">
+      <div className="mt-16 w-60 h-full mx-auto">
         <img src={loader} alt="" />
       </div>
     </>

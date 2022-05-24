@@ -13,6 +13,7 @@ import Navbar from "./Pages/Shared/Navbar";
 import NotFound from "./Pages/Shared/NotFound";
 import "react-toastify/dist/ReactToastify.css";
 import Registration from "./Pages/Authentication/Registration";
+import ForgetPass from "./Pages/Authentication/ForgetPass";
 function App() {
   return (
     <div>
@@ -29,6 +30,7 @@ function App() {
           <Route path="/reviews" element={<Reviews></Reviews>}></Route>
           <Route path="/contact" element={<Contact></Contact>}></Route>
           <Route path="/signup" element={<Registration></Registration>}></Route>
+          <Route path="/forget" element={<ForgetPass></ForgetPass>}></Route>
           <Route path="*" element={<NotFound />}></Route>
         </Routes>
         <Footer />
