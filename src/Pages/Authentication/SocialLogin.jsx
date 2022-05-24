@@ -48,7 +48,7 @@ const SocialLogin = () => {
         onClick={() => signInWithGoogle()}
         aria-label="Continue with google"
         type="button"
-        className="focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-gray-700 py-3.5 px-4 border rounded-lg border-gray-700 flex items-center w-full mt-10"
+        className="focus:outline-none focus:ring-2 focus:ring-offset-1 focus:ring-gray-700 py-3.5 px-4 border rounded-lg border-gray-700 flex items-center w-full mt-10 text-center justify-center"
       >
         <svg
           width="19"
@@ -82,7 +82,7 @@ const SocialLogin = () => {
         onClick={() => signInWithGithub()}
         aria-label="Continue with github"
         type="button"
-        className="focus:outline-none  focus:ring-2 focus:ring-offset-1 focus:ring-gray-700 py-3.5 px-4 border rounded-lg border-gray-700 flex items-center w-full mt-4"
+        className="focus:outline-none  focus:ring-2 focus:ring-offset-1 focus:ring-gray-700 py-3.5 px-4 border rounded-lg border-gray-700 flex items-center w-full mt-4 justify-center"
       >
         <svg
           width="21"
@@ -105,7 +105,7 @@ const SocialLogin = () => {
         onClick={() => signInWithFacebook()}
         aria-label="Continue with facebook"
         type="button"
-        className="focus:outline-none  focus:ring-2 focus:ring-offset-1 focus:ring-gray-700 py-3.5 px-4 border rounded-lg border-gray-700 flex items-center w-full mt-4"
+        className="focus:outline-none  focus:ring-2 focus:ring-offset-1 focus:ring-gray-700 py-3.5 px-4 border rounded-lg border-gray-700 flex items-center w-full mt-4 justify-center"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"

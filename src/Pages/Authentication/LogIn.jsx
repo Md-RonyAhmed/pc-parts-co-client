@@ -161,7 +161,7 @@ const LogIn = () => {
               {errorElement}
               <button
                 type="submit"
-                className="focus:ring-2 focus:ring-offset-2 bg-gradient-to-r from-cyan-500 to-blue-500 hover:bg-gradient-to-bl focus:ring-indigo-700 text-sm font-semibold leading-none text-white focus:outline-none bg-indigo-700 border rounded hover:bg-indigo-600 py-4 w-full"
+                className="btn btn-primary w-full"
               >
                 LOGIN
               </button>
