@@ -1,5 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
+import { ToastContainer } from "react-toastify";
 import LogIn from "./Pages/Authentication/LogIn";
 import Blogs from "./Pages/Blogs/Blogs";
 import Contact from "./Pages/Home/Contact";
@@ -23,7 +24,7 @@ function App() {
         <Route path="/contact" element={<Contact></Contact>}></Route>
         <Route path="*" element={<NotFound/>}></Route>
       </Routes>
-
+      <ToastContainer/>
       <Footer />
     </Navbar>
   );
