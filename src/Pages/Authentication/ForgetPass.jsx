@@ -6,7 +6,8 @@ import Loading from '../Shared/Loading';
 
 const ForgetPass = () => {
    const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
-   const emailRef = useRef("");
+  const emailRef = useRef("");
+
    
   if (sending) {
     return <Loading></Loading>;
