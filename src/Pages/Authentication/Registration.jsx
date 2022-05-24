@@ -17,7 +17,7 @@ const Registration = () => {
      return <Loading></Loading>;
    }
    if (error) {
-     errorElement = <p className="text-red-600">Error: {error?.message}</p>;
+     errorElement = <p className="text-red-600">{error?.message}</p>;
    }
 
    const handleRegister = async (event) => {
@@ -189,7 +189,7 @@ const Registration = () => {
                  disabled={!agree}
                  className="btn btn-primary w-full btn-outline"
                >
-                 SIGN UP
+                 REGISTER
                </button>
              </div>
              <div class="divider">OR</div>

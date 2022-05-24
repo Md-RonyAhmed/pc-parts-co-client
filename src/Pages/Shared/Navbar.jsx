@@ -1,7 +1,19 @@
 import React from 'react';
 import logo from "../../Assets/Logo/logo.png";
 import { NavLink } from "react-router-dom";
-const Navbar = ({children}) => {
+import auth from '../../firebase.init';
+import { useAuthState } from 'react-firebase-hooks/auth';
+import { signOut } from 'firebase/auth';
+import { toast } from 'react-toastify';
+const Navbar = ({ children }) => {
+  
+  const [user] = useAuthState(auth);
+
+   const handleSignOut = () => {
+     signOut(auth);
+     toast.warn("Oopps! you are Logged Out!");
+   };
+
   const navbar = (
     <>
       <li>
@@ -25,9 +37,18 @@ const Navbar = ({children}) => {
       <li>
         <NavLink to="/dashboard">Dashboard</NavLink>
       </li>
-      <li>
-        <NavLink to="/login">Log In</NavLink>
-      </li>
+      {user ? (
+        <button
+          className="btn btn-ghost btn-outline"
+          onClick={handleSignOut}
+        >
+          LogOut
+        </button>
+      ) : (
+        <li>
+          <NavLink to="/login">Log In</NavLink>
+        </li>
+      )}
     </>
   );
    return (
