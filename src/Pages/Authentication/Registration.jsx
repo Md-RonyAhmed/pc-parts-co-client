@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
+import { useForm } from "react-hook-form";
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
@@ -9,7 +10,7 @@ import SocialLogin from './SocialLogin';
 const Registration = () => {
    const [agree, setAgree] = useState(false);
    const [createUserWithEmailAndPassword, loading, error] =
-     useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
+      useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
    const [updateProfile, updating] = useUpdateProfile(auth);
    const navigate = useNavigate();
    let errorElement;

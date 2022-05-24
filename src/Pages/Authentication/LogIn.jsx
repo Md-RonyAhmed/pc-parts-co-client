@@ -3,6 +3,7 @@ import {
   useSendPasswordResetEmail,
   useSignInWithEmailAndPassword,
 } from "react-firebase-hooks/auth";
+import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast} from "react-toastify";
 import img from "../../Assets/Logo/logo.png";
@@ -14,7 +15,12 @@ import SocialLogin from "./SocialLogin";
 const LogIn = () => {
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
-  const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
+   const [sendPasswordResetEmail, sending] = useSendPasswordResetEmail(auth);
+     const {
+       register,
+       formState: { errors },
+       handleSubmit,
+     } = useForm();
   const emailRef = useRef("");
   const passwordRef = useRef("");
   const navigate = useNavigate();
@@ -38,13 +44,10 @@ const LogIn = () => {
     errorElement = <p className="text-red-600">Error: {error?.message}</p>;
   }
 
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    const email = emailRef.current.value;
-    const password = passwordRef.current.value;
+   const onSubmit = (data) => {
+     signInWithEmailAndPassword(data.email, data.password);
+   };
 
-    signInWithEmailAndPassword(email, password);
-  };
   const resetPassword = async () => {
     const email = emailRef.current.value;
     if (email) {
@@ -60,7 +63,7 @@ const LogIn = () => {
       <div className="h-full bg-slate-50 w-full py-16 px-4">
         <div className="flex flex-col items-center justify-center w-full">
           <form
-            onSubmit={handleSubmit}
+            onSubmit={handleSubmit(onSubmit)}
             className="bg-white shadow-2xl bg-transparent rounded lg:w-2/5  md:w-1/2 w-full h-auto p-10 mt-16"
           >
             <div className="flex items-center justify-center">
@@ -92,37 +95,57 @@ const LogIn = () => {
               </Link>
             </p>
             <div>
-              <label
-                id="email"
-                className="text-sm font-medium leading-none text-gray-800"
-              >
-                Email
+              <label className="label">
+                <span className="label-text">Email</span>
               </label>
               <input
-                ref={emailRef}
-                aria-labelledby="email"
-                name="email"
+                {...register("email", {
+                  required: {
+                    value: true,
+                    message: "Email is Required",
+                  },
+                  pattern: {
+                    value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
+                    message: "Provide a valid Email",
+                  },
+                })}
                 type="email"
-                className="bg-gray-100 border rounded text-xs font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2"
+                className="bg-gray-100 border rounded text-xs font-medium leading-none text-gray-800 py-3 w-full pl-3"
                 placeholder="Enter your email"
-                required
               />
+              <label className="label">
+                {errors.email?.type === "required" && (
+                  <span className="label-text-alt text-red-500">
+                    {errors.email.message}
+                  </span>
+                )}
+                {errors.email?.type === "pattern" && (
+                  <span className="label-text-alt text-red-500">
+                    {errors.email.message}
+                  </span>
+                )}
+              </label>
             </div>
-            <div className="mt-6 w-full">
-              <label
-                htmlFor="pass"
-                className="text-sm font-medium leading-none text-gray-800"
-              >
-                Password
+            <div className="mt-0 w-full">
+              <label className="label">
+                <span className="label-text">Password</span>
               </label>
               <div className="relative flex items-center justify-center">
                 <input
-                  ref={passwordRef}
-                  id="pass"
+                  {...register("password", {
+                    required: {
+                      value: true,
+                      message: "Password is Required",
+                    },
+                    minLength: {
+                      value: 6,
+                      message: "Must be 6 characters or longer",
+                    },
+                  })}
                   type="password"
-                  className="bg-gray-100 border rounded  text-xs font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2"
+                  className="bg-gray-100 border rounded text-xs
+                font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2"
                   placeholder="Enter your password"
-                  required
                 />
                 <div className="absolute right-0 mt-2 mr-3 cursor-pointer">
                   <svg
@@ -139,6 +162,18 @@ const LogIn = () => {
                   </svg>
                 </div>
               </div>
+              <label className="label">
+                {errors.password?.type === "required" && (
+                  <span className="label-text-alt text-red-500">
+                    {errors.password.message}
+                  </span>
+                )}
+                {errors.password?.type === "minLength" && (
+                  <span className="label-text-alt text-red-500">
+                    {errors.password.message}
+                  </span>
+                )}
+              </label>
             </div>
             <div className="flex justify-between items-center my-3">
               <div className="form-group form-check">
@@ -159,16 +194,13 @@ const LogIn = () => {
             </div>
             <div className="mt-5">
               {errorElement}
-              <button
-                type="submit"
-                className="btn btn-primary w-full"
-              >
+              <button type="submit" className="btn btn-primary w-full">
                 LOGIN
               </button>
             </div>
             <div class="divider">OR</div>
             <SocialLogin></SocialLogin>
-              </form>
+          </form>
         </div>
       </div>
     </div>
