@@ -11,7 +11,7 @@ const Reviews = () => {
         </div>
 
         <div class="grid md:grid-cols-3 gap-x-6 lg:gap-x-12">
-          <div class="mb-12 md:mb-0 border">
+          <div class="mb-12 md:mb-0 border rounded p-2">
             <div class="flex justify-center mb-6">
               <img
                 src="https://mdbootstrap.com/img/Photos/Avatars/img%20(1).jpg"

@@ -46,21 +46,38 @@ const Navbar = ({ children }) => {
           >
             LogOut
           </button>
-          {user.photoURL ? (
-            <img
-              width="30px"
-              alt=""
-              className="w-12 ml-1 hidden md:block rounded-full cursor-pointer"
-              src={user?.photoURL}
-            />
-          ) : (
-            <img
-              width="30px"
-              alt=""
-              className="w-12 ml-1 hidden md:block rounded-full cursor-pointer"
-              src={img}
-            />
-          )}
+          <span class="dropdown dropdown-hover dropdown-left">
+            <label tabindex="0">
+              {user.photoURL ? (
+                <img
+                  width="30px"
+                  alt=""
+                  className="w-12 ml-1 hidden md:block rounded-full cursor-pointer"
+                  src={user?.photoURL}
+                />
+              ) : (
+                <img
+                  width="30px"
+                  alt=""
+                  className="w-12 ml-1 hidden md:block rounded-full cursor-pointer"
+                  src={img}
+                />
+              )}
+            </label>
+            <ul
+              tabindex="0"
+              class="dropdown-content mt-12 p-1 rounded bg-white"
+            >
+              <li>
+                <span>
+                  {" "}
+                  <div>
+                    {user ? user?.displayName.slice(0, 8) : ""}
+                  </div>
+                </span>
+              </li>
+            </ul>
+          </span>
         </>
       ) : (
         <li>
