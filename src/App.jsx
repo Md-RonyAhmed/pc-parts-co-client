@@ -15,6 +15,7 @@ import "react-toastify/dist/ReactToastify.css";
 import Registration from "./Pages/Authentication/Registration";
 import ForgetPass from "./Pages/Authentication/ForgetPass";
 import RequireAuth from "./Pages/Authentication/RequireAuth";
+import Dashboard from "./Pages/Dashboard/Dashboard";
 function App() {
   return (
     <div>
@@ -23,11 +24,12 @@ function App() {
           <Route path="/" element={<Home></Home>}></Route>
           <Route path="/parts" element={<HomeParts></HomeParts>}></Route>
           <Route path="/blogs" element={<Blogs></Blogs>}></Route>
+          <Route path="/portfolio" element={<MyPortfolio />}></Route>
           <Route
-            path="/portfolio"
+            path="/dashboard"
             element={
               <RequireAuth>
-                <MyPortfolio/>
+                <Dashboard />
               </RequireAuth>
             }
           ></Route>

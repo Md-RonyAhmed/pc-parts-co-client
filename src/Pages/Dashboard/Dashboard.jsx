@@ -1,11 +1,12 @@
 import React from 'react';
 
-const MyPortfolio = () => {
+const Dashboard = () => {
    return (
       <div className='mt-20'>
-         <h1>My Portfolio</h1>
+         <p>Dashboard</p>
+      
       </div>
    );
 };
 
-export default MyPortfolio;
+export default Dashboard;
