@@ -4,6 +4,7 @@ import Banner from './Banner';
 import BusinessStats from './BusinessStats';
 import Contact from './Contact';
 import HomeParts from './PcParts';
+import SocialMedia from './SocialMedia';
 import TrustCompany from './TrustCompany';
 
 const Home = () => {
@@ -14,7 +15,8 @@ const Home = () => {
        <Reviews></Reviews>
        <BusinessStats />
        <TrustCompany/>
-       <Contact/>
+       <Contact />
+       <SocialMedia/>
      </div>
    );
 };
