@@ -17,7 +17,7 @@ useEffect(() => {
      }
     setSingleBlog(data?.data);
   })();
-}, []);
+}, [url]);
 
    return (
      <div className="container my-16 px-6 mx-auto mt-3 md:w-5/6">

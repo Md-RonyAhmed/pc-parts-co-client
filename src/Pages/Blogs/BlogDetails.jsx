@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const BlogDetails = ({blog}) => {
-   const { _id, name, desc, img } = blog;
+   const { name, desc, img } = blog;
    return (
      <div className="mt-24">
        <div className="mt-24 p-1 w-full mx-auto">
