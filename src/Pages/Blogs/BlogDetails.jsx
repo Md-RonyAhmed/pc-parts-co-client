@@ -33,7 +33,7 @@ const BlogDetails = ({blog}) => {
          />
          <p className="text-gray-900 font-light text-justify">{desc.slice(0, 1198)}</p>
          <p className="text-gray-900 font-light mt-4 text-justify">
-           {desc.slice(1198, 2473)}
+           {desc.slice(1198, 4000)}
          </p>
        </section>
        <div className="flex flex-row-reverse gap-0">

@@ -32,7 +32,7 @@ const Blogs = () => {
             <Blog key={blog._id} blog={blog}></Blog>
           ))
         ) : (
-          <div className="md:ml-[500px]">
+          <div>
             <Loading></Loading>
           </div>
         )}
