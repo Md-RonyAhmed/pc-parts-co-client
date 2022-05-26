@@ -20,7 +20,7 @@ useEffect(() => {
 }, []);
 
    return (
-     <div className="container my-16 px-6 mx-auto mt-3">
+     <div className="container my-16 px-6 mx-auto mt-3 md:w-5/6">
          {singleBlog.map((data) => (
             <BlogDetails key={id} blog={data}></BlogDetails>
        ))}

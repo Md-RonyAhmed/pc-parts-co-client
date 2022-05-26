@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 
 const BlogDetails = ({blog}) => {
    const { _id, name, desc, img } = blog;
-    const date = new Date();
    return (
      <div className="mt-24">
        <div className="mt-24 p-1 w-full mx-auto">
@@ -29,27 +28,27 @@ const BlogDetails = ({blog}) => {
          </div>
          <img
            src={img}
-           className="w-full md:w-3/5 shadow-lg rounded-lg mb-6"
+           className="w-full md:w-4/5 shadow-lg rounded-lg mb-6"
            alt=""
          />
-         <p className="text-gray-900 font-light">{desc.slice(0, 1198)}</p>
-         <p className="text-gray-900 font-light mt-4">
+         <p className="text-gray-900 font-light text-justify">{desc.slice(0, 1198)}</p>
+         <p className="text-gray-900 font-light mt-4 text-justify">
            {desc.slice(1198, 2473)}
          </p>
        </section>
-       <div className="flex flex-row-reverse">
-         <div className=" w-48 mb-8">
+       <div className="flex flex-row-reverse gap-0">
+         <div className="w-32 mb-8 mr-0">
            <Link
              to="/blogs"
              type="button"
              className="btn btn-primary btn-outline"
            >
-             Back to Blogs
+             Blogs
            </Link>
          </div>
-         <div className="w-48 mb-8">
+         <div className="w-32 mb-8">
            <Link to="/" type="button" className="btn btn-info btn-outline">
-             Back to Home
+             Home
            </Link>
          </div>
        </div>
