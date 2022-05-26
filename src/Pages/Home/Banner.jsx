@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import img from "../../Assets/Images/approved-quality-designify.png"
 const Banner = () => {
    return (
@@ -11,24 +12,24 @@ const Banner = () => {
                  The best offer <br />
                  <span class="text-primary">for your business</span>
                </h1>
-               <a
+               <Link to="blogs"
                  class="btn btn-primary mr-4 "
                  data-mdb-ripple="true"
                  data-mdb-ripple-color="light"
-                 href="#!"
+                 
                  role="button"
                >
                  Get started
-               </a>
-               <a
+               </Link>
+               <Link
                  class="btn-outline btn btn-ghost"
                  data-mdb-ripple="true"
                  data-mdb-ripple-color="light"
-                 href="#!"
+                 to="portfolio"
                  role="button"
                >
                  Learn more
-               </a>
+               </Link>
              </div>
              <div class="mb-12 lg:mb-0">
                <img

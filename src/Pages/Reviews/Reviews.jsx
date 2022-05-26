@@ -2,7 +2,7 @@ import React from "react";
 
 const Reviews = () => {
   return (
-    <div class="container my-24 px-6 mx-auto">
+    <div id="reviews" class="container my-24 px-6 mx-auto">
       <section class="mb-32 text-gray-800 text-center">
         <div className="mb-6 p-1 md:w-3/6 mx-auto">
           <h1 className="text-4xl font-bold text-center mx-auto text-primary my-6 border-b-4 border-black pb-1 font-mono md:w-1/2  w-5/6">
