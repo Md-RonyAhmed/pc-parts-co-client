@@ -16,6 +16,7 @@ import Registration from "./Pages/Authentication/Registration";
 import ForgetPass from "./Pages/Authentication/ForgetPass";
 import RequireAuth from "./Pages/Authentication/RequireAuth";
 import Dashboard from "./Pages/Dashboard/Dashboard";
+import SingleBlog from "./Pages/Blogs/SingleBlog";
 function App() {
   return (
     <div>
@@ -37,6 +38,7 @@ function App() {
           <Route path="/reviews" element={<Reviews></Reviews>}></Route>
           <Route path="/contact" element={<Contact></Contact>}></Route>
           <Route path="/signup" element={<Registration></Registration>}></Route>
+          <Route path="/blogs/:id" element={<SingleBlog></SingleBlog>}></Route>
           <Route path="/forget" element={<ForgetPass></ForgetPass>}></Route>
           <Route path="*" element={<NotFound />}></Route>
         </Routes>

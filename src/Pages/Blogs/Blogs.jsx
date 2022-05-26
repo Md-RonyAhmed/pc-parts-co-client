@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import axios from "axios";
 import { toast } from 'react-toastify';
-import Blog from '../Blog/Blog';
+import Blog from './Blog';
 import Loading from '../Shared/Loading';
 
 
@@ -15,7 +15,6 @@ const Blogs = () => {
         setBlogs([]);
         return toast.error(data.error);
       }
-      console.log(data?.data)
       setBlogs(data?.data);
     })();
   }, [url]);    

@@ -1,7 +1,11 @@
 import React from 'react';
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 const Blog = ({ blog }) => {
-   const { name, img, desc } = blog;
+  const { _id ,name, img, desc } = blog;
+   const navigate = useNavigate();
+   const navigateToBlogDetail = (id) => {
+     navigate(`/blogs/${id}`);
+   };
    return (
      <div className="flex flex-wrap mb-12">
        <div className="grow-0 shrink-0 basis-auto w-full lg:w-6/12 lg:pr-6 mb-6 lg:mb-0">
@@ -33,13 +37,13 @@ const Blog = ({ blog }) => {
            </span>
          </p>
          <div className="w-36 mt-2">
-           <Link
-             to="/blogs/details"
+           <button
+             onClick={()=>navigateToBlogDetail(_id)}
              type="button"
              className="btn btn-outline btn-info"
            >
              Read more...
-           </Link>
+           </button>
          </div>
        </div>
      </div>
