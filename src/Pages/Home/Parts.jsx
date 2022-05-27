@@ -1,7 +1,12 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 
 const Parts = ({ parts }) => {
-  const { _id, name, desc, img, price ,max_quantity,min_quantity} = parts;
+  const { _id, name, desc, img, price, max_quantity, min_quantity } = parts;
+   const navigate = useNavigate();
+   const navigateToPlaceOrder = (id) => {
+     navigate(`/orders/${id}`);
+   };
   return (
     <>
       <div className="md:flex flex-col p-5 rounded-lg shadow-lg max-w-sm mt-6">
@@ -11,7 +16,8 @@ const Parts = ({ parts }) => {
         <img className="rounded-lg md:h-fit mb-4" src={img} alt="" />
         <div className="mb-4 flex flex-wrap flex-col">
           <p className="text-gray-700 text-base mb-4">
-            Price: <span className="text-orange-600 text-lg">${price} / item</span>
+            Price:{" "}
+            <span className="text-orange-600 text-lg">${price} / item</span>
           </p>
           <p className="text-gray-700 text-base mb-4">
             Maximum Order: {max_quantity}{" "}
@@ -19,14 +25,14 @@ const Parts = ({ parts }) => {
           <p className="text-gray-700 text-base mb-4">
             Minimum Order:
             <span className="bg-slate-200 py-1 px-4 ml-2 text-orange-600 rounded-full">
-              {min_quantity }
+              {min_quantity}
             </span>{" "}
           </p>
         </div>
         <p className="text-gray-700 text-base mb-4">{desc}</p>
         <div className="flex flex-wrap mt-auto pt-3 text-xs">
           <button
-            //  onClick={() => navigateToInventoryDetail(_id)}
+        onClick={() => navigateToPlaceOrder(_id)}
             type="button"
             className="block w-full btn btn-primary btn-outline"
           >

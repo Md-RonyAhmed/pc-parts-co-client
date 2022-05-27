@@ -17,6 +17,7 @@ import ForgetPass from "./Pages/Authentication/ForgetPass";
 import RequireAuth from "./Pages/Authentication/RequireAuth";
 import Dashboard from "./Pages/Dashboard/Dashboard";
 import SingleBlog from "./Pages/Blogs/SingleBlog";
+import PlaceOrder from "./Pages/PlaceOrder/PlaceOrder";
 function App() {
   return (
     <div>
@@ -31,6 +32,14 @@ function App() {
             element={
               <RequireAuth>
                 <Dashboard />
+              </RequireAuth>
+            }
+          ></Route>
+          <Route
+            path="/orders/:id"
+            element={
+              <RequireAuth>
+                <PlaceOrder />
               </RequireAuth>
             }
           ></Route>
