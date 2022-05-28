@@ -37,7 +37,7 @@ const PcParts = () => {
        </div>
        <div className="md:w-1/6 mt-2 w-1/2 md:mx-6 mx-auto">
          <Link
-           to="/manage"
+           to="/"
            type="button"
            className="btn btn-primary w-48"
          >
