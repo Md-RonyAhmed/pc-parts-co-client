@@ -32,6 +32,9 @@ const DashboardSidebar = ({ children }) => {
           <li>
             <Link to="/dashboard/all-orders">Manage All Orders</Link>
           </li>
+          <li>
+            <Link to="/dashboard/all-user">All User</Link>
+          </li>
         </ul>
       </div>
     </div>
