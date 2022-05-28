@@ -21,7 +21,7 @@ const DashboardSidebar = ({ children }) => {
         <label for="my-drawer-2" class="drawer-overlay"></label>
         <ul class="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
           <li>
-            <Link to="/dashboard">{user?.displayName?.slice(0,8) }'s Profile</Link>
+            <Link to="/dashboard">{user?.displayName?.slice(0,8)}'s Profile</Link>
           </li>
           <li>
             <Link to="/dashboard/my-orders">My Orders</Link>

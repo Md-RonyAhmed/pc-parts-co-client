@@ -8,6 +8,7 @@ import { useLocation, useNavigate } from "react-router-dom";
 
 import { toast } from "react-toastify";
 import auth from "../../firebase.init";
+import useToken from "../../hooks/useToken";
 import Loading from "../Shared/Loading";
 
 const SocialLogin = () => {
@@ -19,6 +20,7 @@ const SocialLogin = () => {
     useSignInWithFacebook(auth);
   const navigate = useNavigate();
   const location = useLocation();
+  const [token] = useToken(googleUser);
 
   let from = location.state?.from?.pathname || "/";
 
@@ -34,7 +36,7 @@ const SocialLogin = () => {
       </p>
     );
   }
-  if (googleUser || githubUser || facebookUser) {
+  if (token) {
     navigate(from, { replace: true });
     toast.success(`Log In Successfully`, {
       toastId: "success1",

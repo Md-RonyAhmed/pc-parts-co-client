@@ -7,6 +7,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { toast} from "react-toastify";
 import img from "../../Assets/Logo/logo.png";
 import auth from "../../firebase.init";
+import useToken from "../../hooks/useToken";
 import Loading from "../Shared/Loading";
 import SocialLogin from "./SocialLogin";
 
@@ -14,7 +15,7 @@ import SocialLogin from "./SocialLogin";
 const LogIn = () => {
   const [signInWithEmailAndPassword, user, loading, error] =
     useSignInWithEmailAndPassword(auth);
-  
+  const [token] = useToken(user);
      const {
        register,
        formState: { errors },
@@ -31,7 +32,7 @@ const LogIn = () => {
     return <Loading></Loading>;
   }
 
-  if (user) {
+  if (token) {
     navigate(from, { replace: true });
     toast.success(`Log In Successfully`, {
       toastId: "success1",

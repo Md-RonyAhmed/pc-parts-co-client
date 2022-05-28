@@ -12,6 +12,7 @@ const Navbar = ({ children }) => {
 
    const handleSignOut = () => {
      signOut(auth);
+     localStorage.removeItem("accessToken");
      toast.warn("Oopps! you are Logged Out!");
    };
 

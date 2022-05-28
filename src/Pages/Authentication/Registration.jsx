@@ -6,11 +6,13 @@ import auth from '../../firebase.init';
 import Loading from '../Shared/Loading';
 import img from "../../Assets/Logo/logo.png";
 import SocialLogin from './SocialLogin';
+import useToken from '../../hooks/useToken';
 const Registration = () => {
    const [agree, setAgree] = useState(false);
-   const [createUserWithEmailAndPassword, loading, error] =
+   const [createUserWithEmailAndPassword,user ,loading, error] =
       useCreateUserWithEmailAndPassword(auth, { sendEmailVerification: true });
-   const [updateProfile, updating] = useUpdateProfile(auth);
+  const [updateProfile, updating] = useUpdateProfile(auth);
+  const [token] = useToken(user);
    const navigate = useNavigate();
    let errorElement;
    if (loading || updating) {
@@ -20,6 +22,9 @@ const Registration = () => {
      errorElement = <p className="text-red-600">{error?.message}</p>;
    }
 
+   if (token) {
+     navigate("/");
+   }
    const handleRegister = async (event) => {
      event.preventDefault();
      const name = event.target.name.value;
@@ -31,8 +36,8 @@ const Registration = () => {
      }
      await createUserWithEmailAndPassword(email, password);
      await updateProfile({ displayName: name });
-     navigate("/");
      return toast.success("Registration Successful");
+    
    };
    return (
      <div>
@@ -111,7 +116,7 @@ const Registration = () => {
                </label>
                <div className="relative flex items-center justify-center">
                  <input
-                   id="pass"
+                   id="pass1"
                    name="password"
                    type="password"
                    className="bg-gray-100 border rounded  text-xs font-medium leading-none text-gray-800 py-3 w-full pl-3 mt-2"
@@ -184,13 +189,12 @@ const Registration = () => {
              </div>
              {errorElement}
              <div className="mt-8">
-               <button
+               <input
+                 value="REGISTER"
                  type="submit"
                  disabled={!agree}
                  className="btn btn-primary w-full btn-outline"
-               >
-                 REGISTER
-               </button>
+               />
              </div>
              <div class="divider">OR</div>
              <SocialLogin></SocialLogin>
