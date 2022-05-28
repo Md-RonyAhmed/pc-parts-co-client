@@ -23,6 +23,9 @@ import MyOrders from "./Pages/Dashboard/MyOrders";
 import AddReview from "./Pages/Dashboard/AddReview";
 import AllOrders from "./Pages/Dashboard/AllOrders";
 import AllUser from "./Pages/Dashboard/AllUser";
+import RequireAdmin from "./Pages/Authentication/RequireAdmin";
+import AddProduct from "./Pages/Dashboard/AddProduct";
+import ManageProduct from "./Pages/Dashboard/ManageProduct";
 function App() {
   return (
     <div>
@@ -41,10 +44,40 @@ function App() {
             }
           >
             <Route index element={<MyProfile />}></Route>
-            <Route path="my-orders" element={<MyOrders/>}></Route>
-            <Route path="add-review" element={<AddReview/>}></Route>
-            <Route path="all-orders" element={<AllOrders/>}></Route>
-            <Route path="all-user" element={<AllUser/>}></Route>
+            <Route path="my-orders" element={<MyOrders />}></Route>
+            <Route path="add-review" element={<AddReview />}></Route>
+            <Route
+              path="all-orders"
+              element={
+                <RequireAdmin>
+                  <AllOrders />
+                </RequireAdmin>
+              }
+            ></Route>
+            <Route
+              path="all-user"
+              element={
+                <RequireAdmin>
+                  <AllUser />
+                </RequireAdmin>
+              }
+            ></Route>
+            <Route
+              path="add-product"
+              element={
+                <RequireAdmin>
+                  <AddProduct />
+                </RequireAdmin>
+              }
+            ></Route>
+            <Route
+              path="manage-products"
+              element={
+                <RequireAdmin>
+                  <ManageProduct />
+                </RequireAdmin>
+              }
+            ></Route>
           </Route>
           <Route
             path="/orders/:id"
