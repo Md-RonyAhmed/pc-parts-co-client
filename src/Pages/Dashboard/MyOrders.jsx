@@ -5,6 +5,7 @@ import { useAuthState } from 'react-firebase-hooks/auth';
 import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
+import Loading from '../Shared/Loading';
 
 const MyOrders = () => {
    const [user] = useAuthState(auth);
@@ -50,7 +51,8 @@ const MyOrders = () => {
            </tr>
          </thead>
          <tbody>
-           {myOrders?.map((a,i) => (
+           {myOrders?.length ?
+           myOrders?.map((a,i) => (
              <tr>
                  <th>{i+1}</th>
                  <td>{a.userName?.slice(0,8) }</td>
@@ -59,7 +61,9 @@ const MyOrders = () => {
                  <td>{ a.quantity}</td>
                  <td>${ a.price}</td>
              </tr>
-           ))}
+           )) : <div className='ml-[300px] mt-0'>
+               <Loading/>
+             </div>}
          </tbody>
        </table>
      </div>
