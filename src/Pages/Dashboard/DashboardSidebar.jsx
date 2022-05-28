@@ -1,7 +1,10 @@
 import React from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { Link} from "react-router-dom";
+import auth from "../../firebase.init";
 
 const DashboardSidebar = ({ children }) => {
+  const [user] = useAuthState(auth);
   return (
     <div class="drawer drawer-mobile mt-16 bg-slate-100">
       <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
@@ -18,7 +21,7 @@ const DashboardSidebar = ({ children }) => {
         <label for="my-drawer-2" class="drawer-overlay"></label>
         <ul class="menu p-4 overflow-y-auto w-80 bg-base-100 text-base-content">
           <li>
-            <Link to="/dashboard">My Profile</Link>
+            <Link to="/dashboard">{user?.displayName?.slice(0,8) }'s Profile</Link>
           </li>
           <li>
             <Link to="/dashboard/my-orders">My Orders</Link>
