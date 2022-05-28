@@ -5,7 +5,7 @@ const DashboardSidebar = ({ children }) => {
   return (
     <div class="drawer drawer-mobile mt-16 bg-slate-100">
       <input id="my-drawer-2" type="checkbox" class="drawer-toggle" />
-      <div class="drawer-content flex flex-col md:items-center md:justify-center">
+      <div class="drawer-content p-4">
         <label
           for="my-drawer-2"
           class="btn btn-ghost drawer-button underline underline-offset-4 lg:hidden w-32 mt-2 mb-4 mx-auto text-lime-800"

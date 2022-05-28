@@ -72,7 +72,7 @@ const Navbar = ({ children }) => {
               <li>
                 <span>
                   {" "}
-                  <div>{user ? user?.displayName.slice(0, 8) : ""}</div>
+                  <div>{user ? user?.displayName?.slice(0, 8) : ""}</div>
                 </span>
               </li>
             </ul>

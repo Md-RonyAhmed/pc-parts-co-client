@@ -13,8 +13,9 @@ const PlaceOrder = () => {
   const [parts] = usePartsDetails(id)
   const handleSubmit = async (event) => {
     event.preventDefault();
-     const orders = {
-       quantity: event.target.quantity.value,
+    const orders = {
+       productName:parts?.name,
+       quantity: Number(event.target.quantity.value),
        userName: event.target.uname.value,
        email: event.target.email.value,
        address: event.target.address.value,
@@ -28,8 +29,8 @@ const PlaceOrder = () => {
       return toast.error(`Please order maximum ${parts?.max_quantity} parts`);
     }
     try {
-       const { data } = await axios.put(
-         `http://localhost:5000/order/${id}`,
+       const { data } = await axios.post(
+         `http://localhost:5000/order`,
          orders
        );
        if (!data.success) {
