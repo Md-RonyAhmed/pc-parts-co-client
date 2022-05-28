@@ -1,17 +1,31 @@
 import axios from 'axios';
+import { signOut } from 'firebase/auth';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
+import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import auth from '../../firebase.init';
 
 const MyOrders = () => {
    const [user] = useAuthState(auth);
+   const navigate = useNavigate();
    const [myOrders, setMyOrders] = useState([]);
    const url = `http://localhost:5000/orders?email=${user.email}`;
    useEffect(() => {
       if (user) {
         (async () => {
-          const { data } = await axios.get(url);
+          const { data } = await axios.get(url,{
+            headers: {
+              authorization: `Bearer ${localStorage.getItem("accessToken")}`,
+            },
+          });
+           if (data?.res?.status === 401 || data?.res?.status === 403) {
+             signOut(auth);
+             localStorage.removeItem("accessToken");
+              navigate("/");
+            return data?.res?.json();
+           }
+          
           if (!data?.success) {
             setMyOrders([]);
             return toast.error(data.error);
@@ -19,7 +33,7 @@ const MyOrders = () => {
           setMyOrders(data?.data);
         })();
     }
-   }, [user,url]);
+   }, [user,url,navigate]);
    
 
    return (
