@@ -5,7 +5,7 @@ import auth from '../../firebase.init';
 import DashboardSidebar from './DashboardSidebar';
 
 const Dashboard = () => {
-    const [user] = useAuthState(auth);
+   const [user] = useAuthState(auth);
    return (
       <div className='mt-5'>
          <DashboardSidebar>
