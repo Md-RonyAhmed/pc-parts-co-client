@@ -11,7 +11,7 @@ const MyOrders = () => {
    const [user] = useAuthState(auth);
    const navigate = useNavigate();
    const [myOrders, setMyOrders] = useState([]);
-   const url = `http://localhost:5000/orders?email=${user.email}`;
+   const url = `https://pc-parts-co.herokuapp.com/orders?email=${user.email}`;
    useEffect(() => {
       if (user) {
         (async () => {
@@ -38,8 +38,8 @@ const MyOrders = () => {
    
 
    return (
-     <div class="overflow-x-auto">
-       <table class="table table-zebra w-full">
+     <div className="overflow-x-auto">
+       <table className="table table-zebra w-full">
          <thead>
            <tr>
              <th></th>

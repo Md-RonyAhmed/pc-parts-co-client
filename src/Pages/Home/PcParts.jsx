@@ -1,13 +1,13 @@
+import axios from 'axios';
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { toast } from 'react-toastify';
 import Loading from '../Shared/Loading';
 import Parts from './Parts';
-import { Link } from 'react-router-dom';
-import axios from 'axios';
-import { toast } from 'react-toastify';
 const PcParts = () => {
    const [limit, setLimit] = useState(6);
    const [parts, setParts] = useState([]);
-    const url = `http://localhost:5000/parts?limit=${limit}`;
+    const url = `https://pc-parts-co.herokuapp.com/parts?limit=${limit}`;
     useEffect(() => {
       (async () => {
         const { data } = await axios.get(url);

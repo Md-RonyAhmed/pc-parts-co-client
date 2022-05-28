@@ -7,7 +7,7 @@ import BlogDetails from './BlogDetails';
 const SingleBlog = () => {
 const { id } = useParams();
 const [singleBlog, setSingleBlog] = useState([]);
-   const url = `http://localhost:5000/blogs/${id}`;
+   const url = `https://pc-parts-co.herokuapp.com/blogs/${id}`;
 useEffect(() => {
   (async () => {
     const { data } = await axios.get(url);

@@ -1,13 +1,13 @@
-import React, { useEffect, useState } from 'react';
 import axios from "axios";
+import React, { useEffect, useState } from 'react';
 import { toast } from 'react-toastify';
-import Blog from './Blog';
 import Loading from '../Shared/Loading';
+import Blog from './Blog';
 
 
 const Blogs = () => {
   const [blogs, setBlogs] = useState([]);
-  const url = `http://localhost:5000/blogs`;
+  const url = `https://pc-parts-co.herokuapp.com/blogs`;
   useEffect(() => {
     (async () => {
       const { data } = await axios.get(url);

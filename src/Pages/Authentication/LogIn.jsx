@@ -1,10 +1,10 @@
 import React from "react";
 import {
-  useSignInWithEmailAndPassword,
+   useSignInWithEmailAndPassword
 } from "react-firebase-hooks/auth";
 import { useForm } from "react-hook-form";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import { toast} from "react-toastify";
+import { toast } from "react-toastify";
 import img from "../../Assets/Logo/logo.png";
 import auth from "../../firebase.init";
 import useToken from "../../hooks/useToken";
@@ -189,7 +189,7 @@ const LogIn = () => {
                 LOGIN
               </button>
             </div>
-            <div class="divider">OR</div>
+            <div className="divider">OR</div>
             <SocialLogin></SocialLogin>
           </form>
         </div>

@@ -4,8 +4,8 @@ const MyPortfolio = () => {
   return (
     <>
       <div className="mt-24 md:flex">
-        <div class="avatar md:w-1/3 md:ml-11 ml-16  bg-white flex-col">
-          <div class="md:w-4/5 w-3/5 bg-white rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 mx-auto mt-6">
+        <div className="avatar md:w-1/3 md:ml-11 ml-16  bg-white flex-col">
+          <div className="md:w-4/5 w-3/5 bg-white rounded-full ring ring-primary ring-offset-base-100 ring-offset-2 mx-auto mt-6">
             <img
               className="mx-auto"
               src="https://i.ibb.co/6Rjt92g/MdRony.jpg"

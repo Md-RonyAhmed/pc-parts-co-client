@@ -1,9 +1,9 @@
+import axios from 'axios';
 import React from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
-import auth from '../../firebase.init';
-import img from "../../Assets/Images/images.png"
-import axios from 'axios';
 import { toast } from 'react-toastify';
+import img from "../../Assets/Images/images.png";
+import auth from '../../firebase.init';
 const MyProfile = () => {
    const [user] = useAuthState(auth);
    const handleSubmit = async (event) => {
@@ -16,7 +16,7 @@ const MyProfile = () => {
        linkedIn:event.target.linkedin.value
      };
      try {
-       const { data } = await axios.put(`http://localhost:5000/userProfile/${user?.email}`, updateUser);
+       const { data } = await axios.put(`https://pc-parts-co.herokuapp.com/userProfile/${user?.email}`, updateUser);
        if (!data.success) {
          return toast.error(data.error);
        }

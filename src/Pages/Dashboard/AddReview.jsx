@@ -20,7 +20,7 @@ const AddReview = () => {
        };
         try {
          const { data } = await axios.post(
-           `http://localhost:5000/reviews`,
+           `https://pc-parts-co.herokuapp.com/reviews`,
            review
          );
          if (!data.success) {
@@ -53,8 +53,8 @@ const AddReview = () => {
      <>
        <h1 className="text-2xl text-center">Add a Review</h1>
        <div className="md:w-2/5 w-full mx-auto">
-         <div class="mb-12 md:mb-0 border-2 rounded p-2">
-           <div class="flex justify-center mb-6">
+         <div className="mb-12 md:mb-0 border-2 rounded p-2">
+           <div className="flex justify-center mb-6">
              {user.photoURL ? (
                <img
                  width="100px"

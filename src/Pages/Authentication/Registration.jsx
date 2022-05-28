@@ -2,11 +2,11 @@ import React, { useState } from 'react';
 import { useCreateUserWithEmailAndPassword, useUpdateProfile } from 'react-firebase-hooks/auth';
 import { Link, useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
-import auth from '../../firebase.init';
-import Loading from '../Shared/Loading';
 import img from "../../Assets/Logo/logo.png";
-import SocialLogin from './SocialLogin';
+import auth from '../../firebase.init';
 import useToken from '../../hooks/useToken';
+import Loading from '../Shared/Loading';
+import SocialLogin from './SocialLogin';
 const Registration = () => {
    const [agree, setAgree] = useState(false);
    const [createUserWithEmailAndPassword,user ,loading, error] =
@@ -196,7 +196,7 @@ const Registration = () => {
                  className="btn btn-primary w-full btn-outline"
                />
              </div>
-             <div class="divider">OR</div>
+             <div className="divider">OR</div>
              <SocialLogin></SocialLogin>
            </form>
          </div>

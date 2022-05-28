@@ -7,11 +7,11 @@ import Loading from '../Shared/Loading';
 const AddProduct = () => {
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
     const { data: parts, isLoading } = useQuery("parts", () =>
-      fetch("http://localhost:5000/parts").then((res) => res.json())
+      fetch("https://pc-parts-co.herokuapp.com/parts").then((res) => res.json())
     );
     const imageStorageKey = "8aa1d81e22c82d158472ba2267b0bcb9";
     const onSubmit = async data => {
-        const image = data.image[0];
+        const image = data.image;
         const formData = new FormData();
         formData.append('image', image);
         const url = `https://api.imgbb.com/1/upload?key=${imageStorageKey}`;
@@ -32,7 +32,7 @@ const AddProduct = () => {
                   desc: data.desc
                 };
                 // send to your database 
-                fetch("http://localhost:5000/parts", {
+                fetch("https://pc-parts-co.herokuapp.com/parts", {
                   method: "POST",
                   headers: {
                     "content-type": "application/json",

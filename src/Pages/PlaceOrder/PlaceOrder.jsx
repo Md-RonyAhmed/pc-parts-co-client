@@ -30,7 +30,7 @@ const PlaceOrder = () => {
     }
     try {
        const { data } = await axios.post(
-         `http://localhost:5000/order`,
+         `https://pc-parts-co.herokuapp.com/order`,
          orders
        );
        if (!data.success) {

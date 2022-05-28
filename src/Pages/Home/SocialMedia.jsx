@@ -3,25 +3,25 @@ import React from 'react';
 
 const SocialMedia = () => {
    return (
-     <div class="container my-24 mt-0 px-6 mx-auto">
-       <section class="mb-32 text-gray-800 text-center">
-         <div class="p-12">
-           <h2 class="text-5xl font-bold tracking-tight leading-tight my-12">
+     <div className="container my-24 mt-0 px-6 mx-auto">
+       <section className="mb-32 text-gray-800 text-center">
+         <div className="p-12">
+           <h2 className="text-5xl font-bold tracking-tight leading-tight my-12">
              Let's stay in touch <br />
-             <span class="text-blue-600">Join our social media</span>
+             <span className="text-blue-600">Join our social media</span>
            </h2>
-           <div class="flex flex-wrap justify-center md:space-x-2">
+           <div className="flex flex-wrap justify-center md:space-x-2">
              <button
                type="button"
                data-mdb-ripple="true"
                data-mdb-ripple-color="light"
-               class="inline-block py-2.5 px-6 mb-2 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out flex items-center"
+               className="inline-block py-2.5 px-6 mb-2 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out flex items-center"
                style={{backgroundColor: "#1877f2"}}
              >
                <svg
                  xmlns="http://www.w3.org/2000/svg"
                  viewBox="0 0 320 512"
-                 class="w-4 h-4 mr-2"
+                 className="w-4 h-4 mr-2"
                >
                  <path
                    fill="currentColor"
@@ -35,13 +35,13 @@ const SocialMedia = () => {
                type="button"
                data-mdb-ripple="true"
                data-mdb-ripple-color="light"
-               class="inline-block py-2.5 px-6 mb-2 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out flex items-center"
+               className="inline-block py-2.5 px-6 mb-2 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out flex items-center"
                style={{backgroundColor: "#1da1f2"}}
              >
                <svg
                  xmlns="http://www.w3.org/2000/svg"
                  viewBox="0 0 512 512"
-                 class="w-4 h-4 mr-2"
+                 className="w-4 h-4 mr-2"
                >
                  <path
                    fill="currentColor"
@@ -55,13 +55,13 @@ const SocialMedia = () => {
                      type="button"
                      data-mdb-ripple="true"
                      data-mdb-ripple-color="light"
-                     class="inline-block py-2.5 px-6 mb-2 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out flex items-center"
+                     className="inline-block py-2.5 px-6 mb-2 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out flex items-center"
                      style={{ backgroundColor: "#ea4335" }}
              >
                <svg
                  xmlns="http://www.w3.org/2000/svg"
                  viewBox="0 0 488 512"
-                 class="w-4 h-4 mr-2"
+                 className="w-4 h-4 mr-2"
                >
                  <path
                    fill="currentColor"
@@ -75,13 +75,13 @@ const SocialMedia = () => {
                      type="button"
                      data-mdb-ripple="true"
                      data-mdb-ripple-color="light"
-                     class="inline-block py-2.5 px-6 mb-2 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out flex items-center"
+                     className="inline-block py-2.5 px-6 mb-2 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out flex items-center"
                      style={{ backgroundColor: "#c13584" }}
              >
                <svg
                  xmlns="http://www.w3.org/2000/svg"
                  viewBox="0 0 448 512"
-                 class="w-4 h-4 mr-2"
+                 className="w-4 h-4 mr-2"
                >
                  <path
                    fill="currentColor"
