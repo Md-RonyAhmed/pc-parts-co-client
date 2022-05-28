@@ -21,6 +21,7 @@ import PlaceOrder from "./Pages/PlaceOrder/PlaceOrder";
 import MyProfile from "./Pages/Dashboard/MyProfile";
 import MyOrders from "./Pages/Dashboard/MyOrders";
 import AddReview from "./Pages/Dashboard/AddReview";
+import AllOrders from "./Pages/Dashboard/AllOrders";
 function App() {
   return (
     <div>
@@ -41,6 +42,7 @@ function App() {
             <Route index element={<MyProfile />}></Route>
             <Route path="my-orders" element={<MyOrders/>}></Route>
             <Route path="add-review" element={<AddReview/>}></Route>
+            <Route path="all-orders" element={<AllOrders/>}></Route>
           </Route>
           <Route
             path="/orders/:id"
