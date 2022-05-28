@@ -24,11 +24,13 @@ const AddProduct = () => {
             if(result.success){
                 const img = result.data.url;
                 const parts = {
-                    name: data.name,
-                    email: data.email,
-                    specialty: data.specialty,
-                    img: img
-                }
+                  name: data.name,
+                  price: data.price,
+                  max_quantity: data.max_quantity,
+                  min_quantity: data.min_quantity,
+                  img: img,
+                  desc: data.desc
+                };
                 // send to your database 
                 fetch("http://localhost:5000/parts", {
                   method: "POST",
@@ -61,7 +63,7 @@ const AddProduct = () => {
 
     return (
       <div>
-        <h2 className="text-2xl">Add a New Doctor</h2>
+        <h2 className="text-2xl">Add a New Product</h2>
         <div className="border-2 rounded-md mx-auto md:w-4/5 w-full">
           <form onSubmit={handleSubmit(onSubmit)}>
             <div className="form-control w-full max-w-xs">
@@ -90,21 +92,105 @@ const AddProduct = () => {
 
             <div className="form-control w-full max-w-xs">
               <label className="label">
-                <span className="label-text">Email</span>
+                <span className="label-text">Price</span>
               </label>
               <input
-                type="email"
-                placeholder="Your Email"
+                type="number"
+                placeholder="Product price"
                 className="input input-bordered w-full max-w-xs"
-                {...register("email", {
+                {...register("price", {
                   required: {
                     value: true,
-                    message: "Email is Required",
+                    message: "price is Required",
                   },
-                  pattern: {
-                    value: /[a-z0-9]+@[a-z]+\.[a-z]{2,3}/,
-                    message: "Provide a valid Email",
+                  
+                })}
+              />
+              <label className="label">
+                {errors.email?.type === "required" && (
+                  <span className="label-text-alt text-red-500">
+                    {errors.email.message}
+                  </span>
+                )}
+                {errors.email?.type === "pattern" && (
+                  <span className="label-text-alt text-red-500">
+                    {errors.email.message}
+                  </span>
+                )}
+              </label>
+            </div>
+            <div className="form-control w-full max-w-xs">
+              <label className="label">
+                <span className="label-text">Max Quantity</span>
+              </label>
+              <input
+                type="number"
+                placeholder="Max Quantity"
+                className="input input-bordered w-full max-w-xs"
+                {...register("max_quantity", {
+                  required: {
+                    value: true,
+                    message: "Max Quantity is Required",
                   },
+                  
+                })}
+              />
+              <label className="label">
+                {errors.email?.type === "required" && (
+                  <span className="label-text-alt text-red-500">
+                    {errors.email.message}
+                  </span>
+                )}
+                {errors.email?.type === "pattern" && (
+                  <span className="label-text-alt text-red-500">
+                    {errors.email.message}
+                  </span>
+                )}
+              </label>
+            </div>
+            <div className="form-control w-full max-w-xs">
+              <label className="label">
+                <span className="label-text">Min Quantity</span>
+              </label>
+              <input
+                type="number"
+                placeholder="Min Quantity"
+                className="input input-bordered w-full max-w-xs"
+                {...register("min_quantity", {
+                  required: {
+                    value: true,
+                    message: "Min Quantity is Required",
+                  },
+                  
+                })}
+              />
+              <label className="label">
+                {errors.email?.type === "required" && (
+                  <span className="label-text-alt text-red-500">
+                    {errors.email.message}
+                  </span>
+                )}
+                {errors.email?.type === "pattern" && (
+                  <span className="label-text-alt text-red-500">
+                    {errors.email.message}
+                  </span>
+                )}
+              </label>
+            </div>
+            <div className="form-control w-full max-w-xs">
+              <label className="label">
+                <span className="label-text">Description</span>
+              </label>
+              <input
+                type="text"
+                placeholder="Description.."
+                className="input input-bordered w-full max-w-xs"
+                {...register("desc", {
+                  required: {
+                    value: true,
+                    message: "Desc.. is Required",
+                  },
+                  
                 })}
               />
               <label className="label">
@@ -121,26 +207,15 @@ const AddProduct = () => {
               </label>
             </div>
 
-            <div className="form-control w-full max-w-xs">
-              <label className="label">
-                <span className="label-text">Parts Option</span>
-              </label>
-              <select
-                {...register("specialty")}
-                class="select input-bordered w-full max-w-xs"
-              >
-                
-              </select>
-            </div>
 
             <div className="form-control w-full max-w-xs">
               <label className="label">
-                <span className="label-text">Photo</span>
+                <span className="label-text">Product Image</span>
               </label>
               <input
                 type="file"
                 className="input input-bordered w-full max-w-xs"
-                {...register("image", {
+                {...register("img", {
                   required: {
                     value: true,
                     message: "Image is Required",
@@ -157,7 +232,7 @@ const AddProduct = () => {
             </div>
 
             <input
-              className="btn w-full max-w-xs text-white"
+              className="btn w-full max-w-xs btn-outline btn-primary "
               type="submit"
               value="Add Parts"
             />
