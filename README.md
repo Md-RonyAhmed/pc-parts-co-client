@@ -5,6 +5,11 @@
 ## Heroku reload issue
 <p>Please reload the site if some contents aren't loading. This is happened because heroku reload problem.</p>
 
+## Admin credentials 
+<h1>Email: rony12@gmail.com </h1>
+<h1>Password: 123456 </h1>
+
+
 ### Used Technologies
 <ul>
 <li>This site made by React Js as a Frontend Library.</li>
