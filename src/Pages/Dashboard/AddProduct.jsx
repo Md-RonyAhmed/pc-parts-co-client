@@ -63,10 +63,13 @@ const AddProduct = () => {
 
     return (
       <div>
-        <h2 className="text-2xl">Add a New Product</h2>
-        <div className="border-2 rounded-md mx-4 w-11/12">
-          <form onSubmit={handleSubmit(onSubmit)}>
-            <div className="form-control w-full max-w-xs">
+        <h2 className="text-2xl text-center">Add a New Product</h2>
+        <div className="rounded-md mx-4 w-11/12">
+          <form
+            onSubmit={handleSubmit(onSubmit)}
+            className="border-2 md:w-1/2 lg:w-1/2 mx-auto rounded-md"
+          >
+            <div className="form-control w-11/12 mx-auto">
               <label className="label">
                 <span className="label-text">Name</span>
               </label>
@@ -90,7 +93,7 @@ const AddProduct = () => {
               </label>
             </div>
 
-            <div className="form-control w-full max-w-xs">
+            <div className="form-control w-11/12 mx-auto">
               <label className="label">
                 <span className="label-text">Price</span>
               </label>
@@ -103,7 +106,6 @@ const AddProduct = () => {
                     value: true,
                     message: "price is Required",
                   },
-                  
                 })}
               />
               <label className="label">
@@ -119,7 +121,7 @@ const AddProduct = () => {
                 )}
               </label>
             </div>
-            <div className="form-control w-full max-w-xs">
+            <div className="form-control w-11/12 mx-auto">
               <label className="label">
                 <span className="label-text">Max Quantity</span>
               </label>
@@ -132,7 +134,6 @@ const AddProduct = () => {
                     value: true,
                     message: "Max Quantity is Required",
                   },
-                  
                 })}
               />
               <label className="label">
@@ -148,7 +149,7 @@ const AddProduct = () => {
                 )}
               </label>
             </div>
-            <div className="form-control w-full max-w-xs">
+            <div className="form-control w-11/12 mx-auto">
               <label className="label">
                 <span className="label-text">Min Quantity</span>
               </label>
@@ -161,7 +162,6 @@ const AddProduct = () => {
                     value: true,
                     message: "Min Quantity is Required",
                   },
-                  
                 })}
               />
               <label className="label">
@@ -177,7 +177,7 @@ const AddProduct = () => {
                 )}
               </label>
             </div>
-            <div className="form-control w-full max-w-xs">
+            <div className="form-control w-11/12 mx-auto">
               <label className="label">
                 <span className="label-text">Description</span>
               </label>
@@ -190,7 +190,6 @@ const AddProduct = () => {
                     value: true,
                     message: "Desc.. is Required",
                   },
-                  
                 })}
               />
               <label className="label">
@@ -207,8 +206,7 @@ const AddProduct = () => {
               </label>
             </div>
 
-
-            <div className="form-control w-full max-w-xs">
+            <div className="form-control w-11/12 mx-auto">
               <label className="label">
                 <span className="label-text">Product Image</span>
               </label>
@@ -232,7 +230,7 @@ const AddProduct = () => {
             </div>
 
             <input
-              className="btn w-full max-w-xs btn-outline btn-primary "
+              className="btn w-11/12 mx-4 my-3 btn-outline btn-primary "
               type="submit"
               value="Add Parts"
             />
