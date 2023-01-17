@@ -7,7 +7,7 @@ import Parts from './Parts';
 const PcParts = () => {
    const [limit, setLimit] = useState(6);
    const [parts, setParts] = useState([]);
-    const url = `https://pc-parts-co.herokuapp.com/parts?limit=${limit}`;
+    const url = `https://pc-parts-co-server.vercel.app/parts?limit=${limit}`;
     useEffect(() => {
       (async () => {
         const { data } = await axios.get(url);

@@ -7,7 +7,7 @@ import Loading from '../Shared/Loading';
 const AddProduct = () => {
     const { register, formState: { errors }, handleSubmit, reset } = useForm();
     const { data: parts, isLoading } = useQuery("parts", () =>
-      fetch("https://pc-parts-co.herokuapp.com/parts").then((res) => res.json())
+      fetch("https://pc-parts-co-server.vercel.app/parts").then((res) => res.json())
     );
     const imageStorageKey = "8aa1d81e22c82d158472ba2267b0bcb9";
     const onSubmit = async data => {
@@ -32,7 +32,7 @@ const AddProduct = () => {
                   desc: data.desc
                 };
                 // send to your database 
-                fetch("https://pc-parts-co.herokuapp.com/parts", {
+                fetch("https://pc-parts-co-server.vercel.app/parts", {
                   method: "POST",
                   headers: {
                     "content-type": "application/json",

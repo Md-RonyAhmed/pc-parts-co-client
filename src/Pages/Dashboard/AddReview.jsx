@@ -20,7 +20,7 @@ const AddReview = () => {
        };
         try {
          const { data } = await axios.post(
-           `https://pc-parts-co.herokuapp.com/reviews`,
+           `https://pc-parts-co-server.vercel.app/reviews`,
            review
          );
          if (!data.success) {

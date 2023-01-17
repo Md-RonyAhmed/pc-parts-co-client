@@ -8,7 +8,7 @@ const AllUser = () => {
       isLoading,
       refetch,
     } = useQuery("users", () =>
-      fetch("https://pc-parts-co.herokuapp.com/user", {
+      fetch("https://pc-parts-co-server.vercel.app/user", {
         method: "GET",
         headers: {
           authorization: `Bearer ${localStorage.getItem("accessToken")}`,

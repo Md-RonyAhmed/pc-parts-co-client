@@ -5,7 +5,7 @@ import ReviewDetails from "./ReviewDetails";
 
 const Reviews = () => {
     const [reviews, setReviews] = useState([]);
-  const url = `https://pc-parts-co.herokuapp.com/reviews`;
+  const url = `https://pc-parts-co-server.vercel.app/reviews`;
   useEffect(() => {
     (async () => {
       const { data } = await axios.get(url);

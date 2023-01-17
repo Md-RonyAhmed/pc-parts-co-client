@@ -16,7 +16,7 @@ const MyProfile = () => {
        linkedIn:event.target.linkedin.value
      };
      try {
-       const { data } = await axios.put(`https://pc-parts-co.herokuapp.com/userProfile/${user?.email}`, updateUser);
+       const { data } = await axios.put(`https://pc-parts-co-server.vercel.app/userProfile/${user?.email}`, updateUser);
        if (!data.success) {
          return toast.error(data.error);
        }
