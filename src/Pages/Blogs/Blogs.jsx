@@ -7,7 +7,7 @@ import Blog from './Blog';
 
 const Blogs = () => {
   const [blogs, setBlogs] = useState([]);
-  const url = `https://pc-parts-co.herokuapp.com/blogs`;
+  const url = `https://pc-parts-co-server.vercel.app/blogs`;
   useEffect(() => {
     (async () => {
       const { data } = await axios.get(url);
