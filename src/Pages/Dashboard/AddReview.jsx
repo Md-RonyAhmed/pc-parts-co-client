@@ -20,7 +20,7 @@ const AddReview = () => {
        };
         try {
          const { data } = await axios.post(
-           `https://pc-parts-co-server.vercel.app/reviews`,
+           `https://pc-parts-co-server.onrender.com/reviews`,
            review
          );
          if (!data.success) {

@@ -7,7 +7,7 @@ import BlogDetails from './BlogDetails';
 const SingleBlog = () => {
 const { id } = useParams();
 const [singleBlog, setSingleBlog] = useState([]);
-   const url = `https://pc-parts-co-server.vercel.app/blogs/${id}`;
+   const url = `https://pc-parts-co-server.onrender.com/blogs/${id}`;
 useEffect(() => {
   (async () => {
     const { data } = await axios.get(url);

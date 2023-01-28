@@ -4,7 +4,7 @@ import { toast } from "react-toastify";
 
 export const usePartsDetails = (id) => {
   const [parts, setParts] = useState([]);
-  const url = `https://pc-parts-co-server.vercel.app/parts/${id}`;
+  const url = `https://pc-parts-co-server.onrender.com/parts/${id}`;
   useEffect(() => {
     (async () => {
       const { data } = await axios.get(url);

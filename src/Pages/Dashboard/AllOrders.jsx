@@ -11,7 +11,7 @@ const AllOrders = () => {
   const [user] = useAuthState(auth);
   const navigate = useNavigate();
   const [allOrders, setAllOrders] = useState([]);
-  const url = `https://pc-parts-co-server.vercel.app/order?email=${user.email}`;
+  const url = `https://pc-parts-co-server.onrender.com/order?email=${user.email}`;
   useEffect(() => {
     if (user) {
       (async () => {
